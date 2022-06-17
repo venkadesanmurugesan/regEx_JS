@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression in JavaScript</title>
+  </head>
+  <body>
+    <h2>Welcome to JavaScript RegEx</h2>
+    <button onclick="clickFunc()">Click ME</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+      function clickFunc() {
+        let str = "Welcome to sunday to Samayal \n samayalaaa";
+        let pattern1 = /to/g; //global
+        let pattern2 = /samayal/i; //incasesensitive
+        let pattern3 = /samayal/m; //multiple string find
+        let result1 = str.match(pattern1);
+        let result2 = str.match(pattern2);
+        let result3 = str.match(pattern3);
+        demo1.innerHTML =
+          "<h4><u>Modifiers In RegEx</u></h4>" +
+          result1 +
+          "<br>" +
+          result2 +
+          "<br>" +
+          result3;
+
+        let str2 = "I am Venky";
+        let pattern4 = /[Venky]/g;
+        let pattern5 = /[Ve]/g;
+        let pattern6 = /[^V]/g;
+        let result4 = str2.match(pattern4);
+        let result5 = str2.match(pattern5);
+        let result6 = str2.match(pattern6);
+        demo2.innerHTML =
+          "<h4><u>Brackets In RegEx</u></h4>" +
+          result4 +
+          "<br>" +
+          result5 +
+          "<br>" +
+          result6;
+
+        let str3 = "Venky is a 86.9% Genuine Person!";
+        let pattern7 = /\w/g;
+        let pattern8 = /\W/g;
+        let pattern9 = /\d/g;
+        let pattern10 = /\D/g;
+        let pattern11 = /\s/g;
+        let pattern12 = /\S/g;
+        let result7 = str3.match(pattern7);
+        let result8 = str3.match(pattern8);
+        let result9 = str3.match(pattern9);
+        let result10 = str3.match(pattern10);
+        let result11 = str3.match(pattern11);
+        let result12 = str3.match(pattern12);
+        demo3.innerHTML =
+          "<h4><u>MetaCharacters In RegEx</u></h4>" +
+          result7 +
+          "<br>" +
+          result8 +
+          "<br>" +
+          result9 +
+          "<br>" +
+          result10 +
+          "<br>" +
+          result11 +
+          "<br>" +
+          result12;
+
+        let str4 = "my number Is! 12 349 32";
+        let pattern13 = /m+/g;
+        let pattern14 = /m*/g;
+        let pattern15 = /s?/g;
+        let pattern16 = /\d{2}/g;
+
+        let result13 = str4.match(pattern13);
+        let result14 = str4.match(pattern14);
+        let result15 = str4.match(pattern15);
+        let result16 = str4.match(pattern16);
+
+        demo4.innerHTML =
+          "<h4><u>Quantifiers In RegEx</u></h4>" +
+          result13 +
+          "<br>" +
+          result14 +
+          "<br>" +
+          result15 +
+          "<br>" +
+          result16;
+      }
+    </script>
+  </body>
+</html>
